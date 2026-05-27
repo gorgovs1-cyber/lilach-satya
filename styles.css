@@ -676,6 +676,8 @@ nav.scrolled { border-bottom-color:var(--line); padding:14px 56px; }
   border-radius:10px;
   border:1.5px solid transparent;
   transition:all .2s;
+  text-decoration:none;
+  color:inherit;
 }
 .c-info:hover {
   border-color:var(--lavender-l);
