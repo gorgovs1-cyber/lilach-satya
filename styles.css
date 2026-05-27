@@ -272,6 +272,70 @@ nav.scrolled { border-bottom-color:var(--line); padding:14px 56px; }
   margin-bottom:20px; max-width:540px;
 }
 
+/* ═══════════════ METHOD OVERVIEW ═══════════════ */
+.method-overview {
+  padding:90px 56px;
+  background:var(--bg-warm);
+}
+.mo-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+  max-width:1200px;
+  margin:0 auto;
+}
+.mo-pills {
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.mo-pill {
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:18px 22px;
+  background:var(--cream);
+  border-radius:12px;
+  border:1.5px solid var(--line);
+  transition:all .25s;
+}
+.mo-pill:hover {
+  border-color:var(--lavender);
+  background:#fff;
+  transform:translateX(-4px);
+  box-shadow:0 8px 24px rgba(90,71,120,.09);
+}
+.mo-pill-icon {
+  font-size:22px;
+  width:44px; height:44px;
+  background:var(--lavender-xl);
+  border-radius:10px;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+  color:var(--lavender-d);
+  font-style:normal;
+}
+.mo-pill-title {
+  font-size:15px; font-weight:800;
+  color:var(--ink); line-height:1.2;
+}
+.mo-pill-sub {
+  font-size:12px; color:var(--muted);
+  margin-top:3px;
+}
+.mo-origin {
+  margin-top:6px;
+  padding:20px 24px;
+  background:linear-gradient(135deg, var(--lavender-xl), rgba(155,134,194,.1));
+  border-radius:12px;
+  border:1.5px solid var(--lavender-l);
+  font-size:14px;
+  line-height:1.8;
+  color:var(--warm-text);
+}
+.mo-origin strong { color:var(--lavender-d); font-weight:800; }
+
 /* ═══════════════ WHO IS THIS FOR ═══════════════ */
 .who-for {
   padding:100px 56px;
@@ -825,6 +889,9 @@ footer {
   .about-short { grid-template-columns:1fr; gap:40px; padding:70px 24px; }
   .about-imgs { height:380px; }
 
+  .method-overview { padding:70px 24px; }
+  .mo-grid { grid-template-columns:1fr; gap:40px; }
+
   .who-for { padding:70px 24px; }
   .who-grid { grid-template-columns:repeat(2,1fr); }
 
@@ -871,6 +938,9 @@ footer {
 
   .about-short { padding:60px 16px; }
   .about-imgs { height:300px; }
+
+  .method-overview { padding:60px 16px; }
+  .mo-pill:hover { transform:none; }
 
   .who-for { padding:60px 16px; }
   .who-grid { grid-template-columns:repeat(2,1fr); gap:14px; }
