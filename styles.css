@@ -765,7 +765,7 @@ nav.scrolled { border-bottom-color:var(--line); padding:14px 56px; }
 
 .wa-float {
   position:fixed;
-  bottom:28px; left:28px;
+  bottom:28px; right:28px;
   z-index:199;
   background:#25D366;
   color:#fff;
@@ -777,13 +777,14 @@ nav.scrolled { border-bottom-color:var(--line); padding:14px 56px; }
   transition:all .3s;
   font-family:'Heebo', sans-serif;
   font-size:14px; font-weight:700;
+  direction:rtl;
 }
 .wa-float:hover {
   background:#20ba5a;
   transform:translateY(-3px);
   box-shadow:0 12px 36px rgba(37,211,102,.55);
 }
-.wa-float-icon {
+.wa-float svg {
   width:24px; height:24px; flex-shrink:0;
 }
 
