@@ -661,9 +661,8 @@ nav.scrolled { border-bottom-color:var(--line); padding:14px 56px; }
 .contact-section {
   padding:100px 56px;
   background:var(--bg);
-  display:grid; grid-template-columns:1fr 1fr;
-  gap:80px;
-  align-items:start;
+  max-width:680px;
+  margin:0 auto;
 }
 .contact-info-cards {
   display:flex; flex-direction:column;
