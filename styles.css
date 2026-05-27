@@ -24,8 +24,6 @@ body {
   color:var(--ink);
   direction:rtl;
   -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-  max-width:100vw;
 }
 
 /* ═══════════════ NAV ═══════════════ */
@@ -629,6 +627,10 @@ nav.scrolled { border-bottom-color:var(--line); padding:14px 56px; }
 }
 
 /* ═══════════════ CTA STRIP ═══════════════ */
+.who-for { overflow:hidden; }
+.blocks  { overflow:hidden; }
+.values  { overflow:hidden; }
+
 .cta-strip {
   background:var(--ink);
   padding:80px 56px;
