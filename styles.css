@@ -939,20 +939,32 @@ footer {
 
   .blocks { padding:70px 24px; }
   .blocks-layout { grid-template-columns:1fr; gap:20px; }
+
+  /* טאבים: גריד 3 עמודות — כל כפתור תפוס 1/3 מהרוחב */
   .tabs-list {
+    display:grid !important;
+    grid-template-columns:repeat(3,1fr) !important;
     position:static;
-    flex-direction:row;
-    flex-wrap:wrap;
     gap:8px;
+    flex-direction:unset;
   }
   .tab-btn {
-    white-space:nowrap;
-    width:auto;
-    flex:0 0 auto;
-    padding:10px 14px;
-    font-size:13px;
-    border-radius:8px;
+    width:100% !important;
+    white-space:normal !important;
+    padding:10px 6px !important;
+    font-size:12px !important;
+    text-align:center !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    gap:3px !important;
+    line-height:1.3 !important;
+    border-radius:8px !important;
   }
+  .tab-btn-num {
+    font-size:10px !important;
+  }
+
   .tab-content { padding:28px 22px; min-height:auto; }
   .tab-icon { width:42px; height:42px; font-size:19px; margin-bottom:14px; }
   .tab-h3 { font-size:22px; }
