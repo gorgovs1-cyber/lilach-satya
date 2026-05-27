@@ -17,7 +17,7 @@
 }
 
 *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+html { scroll-behavior:smooth; overflow-x:hidden; }
 body {
   font-family:'Heebo', sans-serif;
   background:var(--bg);
@@ -25,6 +25,7 @@ body {
   direction:rtl;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
+  max-width:100vw;
 }
 
 /* ═══════════════ NAV ═══════════════ */
@@ -75,6 +76,7 @@ nav.scrolled { border-bottom-color:var(--line); padding:14px 56px; }
   padding:120px 56px 80px;
   gap:60px;
   position:relative;
+  overflow:hidden;
 }
 .hero::before {
   content:''; position:absolute;
@@ -230,6 +232,7 @@ nav.scrolled { border-bottom-color:var(--line); padding:14px 56px; }
   display:grid; grid-template-columns:1fr 1fr;
   gap:80px; align-items:center;
   background:var(--cream);
+  overflow:hidden;
 }
 .about-imgs { position:relative; height:620px; }
 .about-img-a {
@@ -965,6 +968,9 @@ footer {
 
 /* ═══════════════ RESPONSIVE · 480px (phone) ═══════════════ */
 @media(max-width:480px){
+  .hero-eyebrow { max-width:calc(100vw - 32px); flex-wrap:wrap; }
+  .hero-eyebrow span { font-size:10px; letter-spacing:1.5px; }
+  .hero-h1 { font-size:clamp(36px, 9vw, 52px); }
   .hero-lead { font-size:15px; }
   .hero-actions { flex-direction:column; align-items:stretch; }
   .hero-actions .btn-primary,
