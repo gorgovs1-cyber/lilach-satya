@@ -11,13 +11,38 @@
   --sage:        #A8B89B;
   --ink:         #2A2438;
   --warm-text:   #4A4159;
-  --muted:       #8C859A;
+  --muted:       #6E6780;
   --line:        #E0D5EC;
   --white:       #FFFBFE;
 }
 
 *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
+
+/* ═══════════════ SKIP LINK ═══════════════ */
+.skip-link {
+  position:absolute; top:-100%; right:0;
+  background:var(--lavender-d); color:#fff;
+  padding:12px 24px; font-size:14px; font-weight:700;
+  text-decoration:none; z-index:9999;
+  border-radius:0 0 8px 8px;
+  transition:top .2s;
+}
+.skip-link:focus { top:0; }
+
+/* ═══════════════ FOCUS STYLES ═══════════════ */
+:focus-visible {
+  outline:3px solid var(--lavender-d);
+  outline-offset:3px;
+  border-radius:4px;
+}
+/* Override for elements that have their own border-radius */
+.btn-primary:focus-visible,
+.btn-ghost:focus-visible,
+.nav-cta:focus-visible,
+.btn-form:focus-visible { border-radius:6px; }
+.tab-btn:focus-visible  { border-radius:8px; }
+.mm-close:focus-visible { border-radius:50%; }
 body {
   font-family:'Heebo', sans-serif;
   background:var(--bg);

@@ -10,8 +10,10 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">דלג לתוכן הראשי</a>
+
 <!-- NAV -->
-<nav id="nav">
+<nav id="nav" aria-label="ניווט ראשי">
   <div class="logo">
     <div class="logo-name">לילך חזן</div>
     <div class="logo-sub">Satya Method</div>
@@ -23,13 +25,13 @@
     <li><a href="#faq">שאלות</a></li>
     <li><a href="#contact" class="nav-cta">שיחת היכרות</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="פתח תפריט">
+  <button class="hamburger" id="hamburger" aria-label="פתח תפריט" aria-expanded="false" aria-controls="mm">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
 <!-- MOBILE MENU -->
-<div class="mm" id="mm">
+<div class="mm" id="mm" role="dialog" aria-modal="true" aria-label="תפריט ניווט">
   <div class="mm-top">
     <div class="logo">
       <div class="logo-name">לילך חזן</div>
@@ -54,6 +56,8 @@
   <span class="wa-float-label">וואטסאפ</span>
 </a>
 
+<main id="main-content">
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
@@ -69,7 +73,7 @@
     </div>
   </div>
   <div class="hero-img-wrap">
-    <img src="images/img_0075.jpeg" alt="לילך חזן">
+    <img src="images/img_0075.jpeg" alt="לילך חזן, מאמנת להתפתחות אישית בשיטת סאטיה">
     <div class="hero-img-tag">
       <div class="hero-img-tag-num">100%</div>
       <div class="hero-img-tag-label">מחויבות לשינוי<br>אמיתי ועמוק</div>
@@ -89,8 +93,8 @@
 <!-- ABOUT SHORT -->
 <section class="about-short" id="about">
   <div class="about-imgs rv">
-    <img class="about-img-a" src="images/img_0080.jpeg" alt="לילך חזן">
-    <img class="about-img-b" src="images/img_0077.jpeg" alt="לילך חזן">
+    <img class="about-img-a" src="images/img_0080.jpeg" alt="לילך חזן מלווה מתאמנת בתהליך אישי">
+    <img class="about-img-b" src="images/img_0077.jpeg" alt="לילך חזן בסביבת עבודה">
   </div>
   <div class="rv d1">
     <div class="section-eyebrow">אודות</div>
@@ -409,6 +413,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer>
