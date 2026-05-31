@@ -292,6 +292,13 @@ nav.scrolled { border-bottom-color:var(--line); padding:14px 56px; }
   margin-bottom:24px;
 }
 .section-h2 em { font-style:normal; color:var(--lavender-d); }
+.about-subtitle {
+  font-size:15px; font-weight:700;
+  color:var(--lavender-d);
+  letter-spacing:.5px;
+  margin-bottom:20px;
+}
+
 .section-lead {
   font-size:17px; line-height:1.85;
   color:var(--warm-text); font-weight:400;
