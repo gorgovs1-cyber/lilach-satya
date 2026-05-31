@@ -65,6 +65,19 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
   });
 });
 
+// Tab arrow-key navigation (WCAG 2.1 §4.1.2 – RTL: ArrowRight=prev, ArrowLeft=next)
+const tabBtns = Array.from(document.querySelectorAll('.tab-btn'));
+tabBtns.forEach((btn, idx) => {
+  btn.addEventListener('keydown', e => {
+    let next;
+    if (e.key === 'ArrowRight')      next = tabBtns[(idx - 1 + tabBtns.length) % tabBtns.length];
+    else if (e.key === 'ArrowLeft')  next = tabBtns[(idx + 1) % tabBtns.length];
+    else if (e.key === 'Home')       next = tabBtns[0];
+    else if (e.key === 'End')        next = tabBtns[tabBtns.length - 1];
+    if (next) { e.preventDefault(); next.click(); next.focus(); }
+  });
+});
+
 // FAQ ARIA init
 document.querySelectorAll('.faq-q').forEach(q=>{
   q.setAttribute('role','button');
