@@ -30,6 +30,20 @@ mmClose.addEventListener('click', closeMenu);
 mmOverlay.addEventListener('click', closeMenu);
 document.querySelectorAll('.mm-links a,.mm-cta').forEach(a=>a.addEventListener('click', closeMenu));
 
+// ESC key closes menu
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape' && mm.classList.contains('open')) closeMenu();
+});
+
+// Focus trap inside mobile menu
+mm.addEventListener('keydown', e=>{
+  if(e.key!=='Tab') return;
+  const focusable = Array.from(mm.querySelectorAll('a,button,[tabindex="0"]')).filter(el=>!el.disabled);
+  const first = focusable[0], last = focusable[focusable.length-1];
+  if(e.shiftKey){ if(document.activeElement===first){ e.preventDefault(); last.focus(); } }
+  else { if(document.activeElement===last){ e.preventDefault(); first.focus(); } }
+});
+
 const io=new IntersectionObserver(entries=>entries.forEach(e=>{
   if(e.isIntersecting)e.target.classList.add('in');
 }),{threshold:.1});
