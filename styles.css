@@ -1111,3 +1111,29 @@ footer {
   footer { gap:16px; }
   .f-links { flex-wrap:wrap; gap:16px; }
 }
+/* ═══════════════ LEGAL PAGES (נגישות / פרטיות / תקנון) ═══════════════ */
+.legal-page { max-width:780px; margin:0 auto; padding:120px 40px 80px; }
+.legal-page h1 { font-size:clamp(32px,4vw,48px); font-weight:900; color:var(--ink); letter-spacing:-1.5px; margin-bottom:8px; }
+.legal-date { font-size:13px; color:var(--muted); margin-bottom:32px; display:block; }
+.legal-page h2 { font-size:20px; font-weight:800; color:var(--ink); margin:40px 0 12px; padding-bottom:8px; border-bottom:2px solid var(--lavender-xl); }
+.legal-page p, .legal-page li { font-size:16px; line-height:1.9; color:var(--warm-text); margin-bottom:12px; }
+.legal-page ul { margin-bottom:12px; }
+.legal-content[dir="rtl"] ul { padding-right:20px; }
+.legal-content[dir="ltr"] ul { padding-left:20px; }
+.legal-page li { margin-bottom:6px; }
+.legal-page a:not(.back-link):not(.lang-btn) { color:var(--lavender-d); font-weight:700; }
+.legal-badge { display:inline-flex; align-items:center; gap:10px; background:var(--lavender-xl); border:1.5px solid var(--lavender-l); border-radius:10px; padding:14px 20px; margin-bottom:32px; }
+.legal-badge-icon { font-size:22px; }
+.legal-badge-text { font-size:14px; font-weight:700; color:var(--lavender-d); }
+.legal-contact { background:var(--cream); border:1.5px solid var(--line); border-radius:12px; padding:28px 32px; margin-top:16px; }
+.legal-contact p { margin-bottom:6px; }
+.legal-contact a { color:var(--lavender-d); font-weight:700; text-decoration:none; }
+.legal-contact a:hover { text-decoration:underline; }
+.back-link { display:inline-flex; align-items:center; gap:8px; color:var(--lavender-d); font-size:14px; font-weight:700; text-decoration:none; margin-bottom:24px; }
+.back-link:hover { text-decoration:underline; }
+.lang-toggle { display:inline-flex; gap:4px; background:var(--lavender-xl); border-radius:10px; padding:4px; margin-bottom:36px; }
+.lang-btn { font-family:inherit; font-size:14px; font-weight:700; color:var(--lavender-d); background:none; border:none; border-radius:7px; padding:8px 20px; cursor:pointer; transition:all .2s; }
+.lang-btn.active { background:var(--lavender-d); color:#fff; }
+.lang-btn:hover:not(.active) { background:var(--lavender-l); }
+.legal-content[hidden] { display:none; }
+@media(max-width:768px){ .legal-page { padding:90px 20px 60px; } }

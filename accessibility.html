@@ -4,86 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>הצהרת נגישות | לילך חזן – שיטת סאטיה</title>
+<meta name="description" content="הצהרת הנגישות של אתר לילך חזן – שיטת סאטיה. האתר עומד בתקן WCAG 2.1 ברמה AA.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
 <link rel="stylesheet" href="styles.css">
-<style>
-  .a11y-page {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 120px 40px 80px;
-  }
-  .a11y-page h1 {
-    font-size: clamp(32px, 4vw, 48px);
-    font-weight: 900;
-    color: var(--ink);
-    letter-spacing: -1.5px;
-    margin-bottom: 8px;
-  }
-  .a11y-page .a11y-date {
-    font-size: 13px;
-    color: var(--muted);
-    margin-bottom: 48px;
-    display: block;
-  }
-  .a11y-page h2 {
-    font-size: 20px;
-    font-weight: 800;
-    color: var(--ink);
-    margin: 40px 0 12px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--lavender-xl);
-  }
-  .a11y-page p, .a11y-page li {
-    font-size: 16px;
-    line-height: 1.9;
-    color: var(--warm-text);
-    margin-bottom: 12px;
-  }
-  .a11y-page ul {
-    padding-right: 20px;
-    margin-bottom: 12px;
-  }
-  .a11y-page li { margin-bottom: 6px; }
-  .a11y-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--lavender-xl);
-    border: 1.5px solid var(--lavender-l);
-    border-radius: 10px;
-    padding: 14px 20px;
-    margin-bottom: 32px;
-  }
-  .a11y-badge-icon { font-size: 22px; }
-  .a11y-badge-text { font-size: 14px; font-weight: 700; color: var(--lavender-d); }
-  .a11y-contact {
-    background: var(--cream);
-    border: 1.5px solid var(--line);
-    border-radius: 12px;
-    padding: 28px 32px;
-    margin-top: 16px;
-  }
-  .a11y-contact p { margin-bottom: 6px; }
-  .a11y-contact a { color: var(--lavender-d); font-weight: 700; text-decoration: none; }
-  .a11y-contact a:hover { text-decoration: underline; }
-  .back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--lavender-d);
-    font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
-    margin-bottom: 40px;
-  }
-  .back-link:hover { text-decoration: underline; }
-  @media(max-width: 768px) {
-    .a11y-page { padding: 90px 20px 60px; }
-  }
-</style>
 </head>
 <body>
 
@@ -99,74 +25,148 @@
     <li><a href="index.html#who-for">למי זה מתאים</a></li>
     <li><a href="index.html#blocks">השיטה</a></li>
     <li><a href="index.html#faq">שאלות</a></li>
-    <li><a href="index.html#contact" class="nav-cta">שיחת היכרות</a></li>
+    <li><a href="index.html#contact" class="nav-cta">צור קשר</a></li>
   </ul>
 </nav>
 
 <main id="main-content">
-<div class="a11y-page">
+<div class="legal-page" id="legalPage" dir="rtl">
 
-  <a href="index.html" class="back-link">← חזרה לאתר הראשי</a>
-
-  <div class="a11y-badge">
-    <span class="a11y-badge-icon">♿</span>
-    <span class="a11y-badge-text">האתר עומד ברמת נגישות AA לפי תקן WCAG 2.1</span>
+  <div class="lang-toggle" role="group" aria-label="בחירת שפה / Select language">
+    <button type="button" class="lang-btn active" data-lang="he" aria-pressed="true">עברית</button>
+    <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">English</button>
   </div>
 
-  <h1>הצהרת נגישות</h1>
-  <span class="a11y-date">עודכן לאחרונה: מאי 2025</span>
+  <!-- ═══ עברית ═══ -->
+  <div class="legal-content" data-lang="he" lang="he" dir="rtl">
+    <a href="index.html" class="back-link">← חזרה לאתר הראשי</a>
 
-  <p>
-    אתר זה, המופעל על ידי <strong>לילך חזן</strong> – מאמנת להתפתחות אישית בשיטת סאטיה,
-    פועל מתוך מחויבות לנגישות דיגיטלית לכלל המשתמשים, לרבות אנשים עם מוגבלויות.
-    אנו שואפים לעמוד בדרישות תקן WCAG 2.1 ברמה AA ובדרישות תקנות הנגישות הישראליות.
-  </p>
+    <div class="legal-badge">
+      <span class="legal-badge-icon" aria-hidden="true">♿</span>
+      <span class="legal-badge-text">האתר עומד ברמת נגישות AA לפי תקן WCAG 2.1</span>
+    </div>
 
-  <h2>מה נעשה לשיפור הנגישות</h2>
-  <ul>
-    <li>הוספת קישור "דלג לתוכן הראשי" לניווט מהיר עבור משתמשי מקלדת</li>
-    <li>הגדרת שפת הדף (<code>lang="he"</code>) וכיוון RTL לתמיכה בקוראי מסך</li>
-    <li>שימוש בתגיות סמנטיות: <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;footer&gt;</code></li>
-    <li>טקסט חלופי (<code>alt</code>) מתאר לכל התמונות</li>
-    <li>ניגודיות צבעים של 4.5:1 לפחות לכל הטקסטים הרגילים</li>
-    <li>מסגרת focus ברורה לכל הרכיבים האינטראקטיביים</li>
-    <li>תמיכה מלאה בניווט מקלדת (Tab, Enter, Space)</li>
-    <li>ARIA מלא על רכיבי אקורדיון (שאלות נפוצות) וטאבים (אבני היסוד)</li>
-    <li>כותרות בסדר היררכי תקין (H1 ← H2 ← H3)</li>
-    <li>כפתורים עם תיאורי ARIA ברורים</li>
-  </ul>
+    <h1>הצהרת נגישות</h1>
+    <span class="legal-date">עודכן לאחרונה: יוני 2026</span>
 
-  <h2>מגבלות נגישות ידועות</h2>
-  <ul>
-    <li>אנימציות כניסה בטעינה — עשויות להפריע למשתמשים הרגישים לתנועה (אנו בוחנים הוספת תמיכה ב-<code>prefers-reduced-motion</code>)</li>
-    <li>תמונות דקורטיביות מסוימות עשויות להיות מוסתרות מקוראי מסך</li>
-  </ul>
-
-  <h2>תאימות לדפדפנים ולטכנולוגיות עזר</h2>
-  <p>האתר נבדק ונתמך ב:</p>
-  <ul>
-    <li>Chrome, Firefox, Safari — גרסאות עדכניות</li>
-    <li>ניווט מקלדת מלא</li>
-    <li>קורא מסך NVDA (Windows) ו-VoiceOver (Mac/iOS)</li>
-  </ul>
-
-  <h2>בסיס חוקי</h2>
-  <p>
-    הצהרה זו ניתנת בהתאם ל<strong>תקנות שוויון זכויות לאנשים עם מוגבלות (נגישות אתרי אינטרנט), התשע"ד–2013</strong>
-    ולתקן הישראלי 5568 המבוסס על WCAG 2.1.
-  </p>
-
-  <h2>דיווח על בעיות נגישות</h2>
-  <p>
-    נתקלתם בבעיית נגישות? נשמח לשמוע ולתקן. ניתן לפנות אלינו:
-  </p>
-  <div class="a11y-contact">
-    <p><strong>שם:</strong> לילך חזן</p>
-    <p><strong>טלפון:</strong> <a href="tel:0542379159">054-237-9159</a></p>
-    <p><strong>אימייל:</strong> <a href="mailto:lilach.uston@gmail.com">lilach.uston@gmail.com</a></p>
-    <p style="margin-top:14px; font-size:14px; color:var(--muted);">
-      אנו מתחייבים לטפל בפניות נגישות תוך 5 ימי עסקים.
+    <p>
+      אתר זה, המופעל על ידי <strong>לילך חזן</strong> – מאמנת להתפתחות אישית בשיטת סאטיה,
+      פועל מתוך מחויבות לנגישות דיגיטלית לכלל המשתמשים, לרבות אנשים עם מוגבלויות.
+      אנו שואפים לעמוד בדרישות תקן WCAG 2.1 ברמה AA ובדרישות תקנות הנגישות הישראליות.
     </p>
+
+    <h2>מה נעשה לשיפור הנגישות</h2>
+    <ul>
+      <li>קישור "דלג לתוכן הראשי" לניווט מהיר עבור משתמשי מקלדת</li>
+      <li>הגדרת שפת הדף (<code>lang="he"</code>) וכיוון RTL לתמיכה בקוראי מסך</li>
+      <li>שימוש בתגיות סמנטיות: <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;footer&gt;</code></li>
+      <li>טקסט חלופי (<code>alt</code>) מתאר לכל התמונות</li>
+      <li>ניגודיות צבעים של 4.5:1 לפחות לכל הטקסטים הרגילים</li>
+      <li>מסגרת focus ברורה לכל הרכיבים האינטראקטיביים</li>
+      <li>תמיכה מלאה בניווט מקלדת (Tab, Enter, Space, Esc, מקשי חצים)</li>
+      <li>מלכוד פוקוס (focus trap) בתפריט הנייד וסגירה במקש Esc</li>
+      <li>ARIA מלא על רכיבי אקורדיון (שאלות נפוצות) וטאבים (אבני היסוד)</li>
+      <li>כותרות בסדר היררכי תקין (H1 ← H2 ← H3)</li>
+      <li>כיבוד העדפת <code>prefers-reduced-motion</code> לצמצום אנימציות</li>
+      <li>סימון אלמנטים דקורטיביים כ-<code>aria-hidden</code> להסתרה מקוראי מסך</li>
+    </ul>
+
+    <h2>מגבלות נגישות ידועות</h2>
+    <p>
+      אנו פועלים לשיפור מתמיד של הנגישות. ייתכן שרכיבים מסוימים טרם הונגשו במלואם.
+      אם נתקלת ברכיב שאינו נגיש, נשמח שתעדכן/י אותנו ונפעל לתקנו בהקדם.
+    </p>
+
+    <h2>תאימות לדפדפנים ולטכנולוגיות עזר</h2>
+    <p>האתר נבדק ונתמך ב:</p>
+    <ul>
+      <li>Chrome, Firefox, Safari – גרסאות עדכניות</li>
+      <li>ניווט מקלדת מלא</li>
+      <li>קורא מסך NVDA (Windows) ו-VoiceOver (Mac/iOS)</li>
+    </ul>
+
+    <h2>בסיס חוקי</h2>
+    <p>
+      הצהרה זו ניתנת בהתאם ל<strong>תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג–2013</strong>
+      ולתקן הישראלי 5568 המבוסס על WCAG 2.1.
+    </p>
+
+    <h2>דיווח על בעיות נגישות</h2>
+    <p>נתקלת בבעיית נגישות? נשמח לשמוע ולתקן. ניתן לפנות אלינו:</p>
+    <div class="legal-contact">
+      <p><strong>שם:</strong> לילך חזן</p>
+      <p><strong>טלפון:</strong> <a href="tel:0542379159">054-237-9159</a></p>
+      <p><strong>אימייל:</strong> <a href="mailto:lilach.uston@gmail.com">lilach.uston@gmail.com</a></p>
+      <p style="margin-top:14px; font-size:14px; color:var(--muted);">
+        אנו מתחייבים לטפל בפניות נגישות תוך 5 ימי עסקים.
+      </p>
+    </div>
+  </div>
+
+  <!-- ═══ English ═══ -->
+  <div class="legal-content" data-lang="en" lang="en" dir="ltr" hidden>
+    <a href="index.html" class="back-link">← Back to main site</a>
+
+    <div class="legal-badge">
+      <span class="legal-badge-icon" aria-hidden="true">♿</span>
+      <span class="legal-badge-text">This site conforms to WCAG 2.1 Level AA</span>
+    </div>
+
+    <h1>Accessibility Statement</h1>
+    <span class="legal-date">Last updated: June 2026</span>
+
+    <p>
+      This website, operated by <strong>Lilach Hazan</strong> – personal development coach using the Satya Method,
+      is committed to digital accessibility for all users, including people with disabilities.
+      We strive to meet the requirements of WCAG 2.1 Level AA and the Israeli accessibility regulations.
+    </p>
+
+    <h2>What We Have Done</h2>
+    <ul>
+      <li>A "Skip to main content" link for quick keyboard navigation</li>
+      <li>Page language (<code>lang="he"</code>) and RTL direction for screen reader support</li>
+      <li>Semantic tags: <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;footer&gt;</code></li>
+      <li>Descriptive alternative text (<code>alt</code>) for all images</li>
+      <li>Color contrast of at least 4.5:1 for all normal text</li>
+      <li>Clear focus outlines on all interactive elements</li>
+      <li>Full keyboard navigation (Tab, Enter, Space, Esc, arrow keys)</li>
+      <li>Focus trap in the mobile menu and closing with the Esc key</li>
+      <li>Full ARIA on accordion (FAQ) and tab (foundations) components</li>
+      <li>Proper heading hierarchy (H1 → H2 → H3)</li>
+      <li>Respect for the <code>prefers-reduced-motion</code> preference</li>
+      <li>Decorative elements marked <code>aria-hidden</code> to hide them from screen readers</li>
+    </ul>
+
+    <h2>Known Limitations</h2>
+    <p>
+      We are continuously working to improve accessibility. Some components may not yet be fully accessible.
+      If you encounter an inaccessible element, please let us know and we will work to fix it promptly.
+    </p>
+
+    <h2>Browser and Assistive Technology Compatibility</h2>
+    <p>The site has been tested and is supported on:</p>
+    <ul>
+      <li>Chrome, Firefox, Safari – latest versions</li>
+      <li>Full keyboard navigation</li>
+      <li>NVDA (Windows) and VoiceOver (Mac/iOS) screen readers</li>
+    </ul>
+
+    <h2>Legal Basis</h2>
+    <p>
+      This statement is provided in accordance with the <strong>Equal Rights for Persons with Disabilities
+      (Service Accessibility Adjustments) Regulations, 2013</strong> and Israeli Standard 5568, based on WCAG 2.1.
+    </p>
+
+    <h2>Reporting Accessibility Issues</h2>
+    <p>Encountered an accessibility problem? We would be glad to hear and fix it. You can contact us:</p>
+    <div class="legal-contact">
+      <p><strong>Name:</strong> Lilach Hazan</p>
+      <p><strong>Phone:</strong> <a href="tel:0542379159">054-237-9159</a></p>
+      <p><strong>Email:</strong> <a href="mailto:lilach.uston@gmail.com">lilach.uston@gmail.com</a></p>
+      <p style="margin-top:14px; font-size:14px; color:var(--muted);">
+        We are committed to addressing accessibility inquiries within 5 business days.
+      </p>
+    </div>
   </div>
 
 </div>
@@ -181,13 +181,30 @@
     <li><a href="index.html#faq">שאלות</a></li>
     <li><a href="index.html#contact">צרו קשר</a></li>
     <li><a href="accessibility.html">הצהרת נגישות</a></li>
+    <li><a href="privacy.html">מדיניות פרטיות</a></li>
+    <li><a href="terms.html">תקנון</a></li>
   </ul>
-  <p class="f-copy">© 2025 לילך חזן. כל הזכויות שמורות.</p>
+  <p class="f-copy">© 2026 לילך חזן. כל הזכויות שמורות.</p>
 </footer>
 
 <script>
   window.addEventListener('scroll',()=>
     document.getElementById('nav').classList.toggle('scrolled',scrollY>40));
+
+  document.querySelectorAll('.lang-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const lang=btn.dataset.lang;
+      document.querySelectorAll('.lang-btn').forEach(b=>{
+        const on=b===btn;
+        b.classList.toggle('active',on);
+        b.setAttribute('aria-pressed',on?'true':'false');
+      });
+      document.querySelectorAll('.legal-content').forEach(c=>{
+        c.hidden = c.dataset.lang!==lang;
+      });
+      document.getElementById('legalPage').setAttribute('dir', lang==='he'?'rtl':'ltr');
+    });
+  });
 </script>
 </body>
 </html>
