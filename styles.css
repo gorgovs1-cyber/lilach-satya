@@ -699,11 +699,14 @@ nav.scrolled { border-bottom-color:var(--line); padding:14px 56px; }
   transform:rotate(45deg);
 }
 .faq-a {
-  max-height:0; overflow:hidden;
-  transition:max-height .35s ease-out;
+  display:grid;
+  grid-template-rows:0fr;
+  transition:grid-template-rows .35s ease-out;
 }
-.faq-item.open .faq-a { max-height:300px; }
+.faq-item.open .faq-a { grid-template-rows:1fr; }
 .faq-a-inner {
+  overflow:hidden;
+  min-height:0;
   padding:0 28px 24px;
   font-size:15px; line-height:1.85;
   color:var(--warm-text); font-weight:400;
