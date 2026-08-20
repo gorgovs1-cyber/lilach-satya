@@ -1001,6 +1001,15 @@ footer {
   .legal-contact { padding:24px 20px; }
 }
 
+/* ═══════════════ FOCUS-VISIBLE (branded, keyboard nav only) ═══════════════ */
+a:focus-visible,
+button:focus-visible,
+.faq-q:focus-visible {
+  outline:2px solid var(--lavender-d);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
 /* ═══════════════ REVEAL ═══════════════ */
 .rv { opacity:0; transform:translateY(28px); transition:all .7s cubic-bezier(.22,1,.36,1); }
 .rv.in { opacity:1; transform:none; }
