@@ -1215,7 +1215,7 @@ footer {
 
 /* ═══════════════ RESPONSIVE · 480px (phone) ═══════════════ */
 @media(max-width:480px){
-  .hero-lead { font-size:15px; }
+  .hero-lead { font-size:16px; }
   .hero-actions { flex-direction:column; align-items:stretch; }
   .hero-actions .btn-primary,
   .hero-actions .btn-ghost { text-align:center; }
