@@ -1074,3 +1074,18 @@ footer {
   footer { gap:16px; }
   .f-links { flex-wrap:wrap; gap:16px; }
 }
+
+/* ═══════════════ REDUCED MOTION ═══════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-eyebrow, .hero-h1, .hero-lead, .hero-actions, .hero-img-wrap, .hero-img-tag,
+  .rv {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
