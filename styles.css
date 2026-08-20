@@ -1146,6 +1146,7 @@ button:focus-visible,
   position:absolute;
   inset:-2px;
 }
+.mm-close .li { width:18px; height:18px; stroke-width:2; }
 .mm-close:hover { background:var(--lavender-d); color:#fff; }
 
 .mm-links {
