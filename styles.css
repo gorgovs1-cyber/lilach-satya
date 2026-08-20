@@ -860,7 +860,13 @@ footer {
 .f-name { font-size:20px; font-weight:900; color:#fff; letter-spacing:-.3px; }
 .f-sub { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,.4); margin-top:5px; }
 .f-links { display:flex; gap:28px; list-style:none; }
-.f-links a { font-size:13px; font-weight:500; color:rgba(255,255,255,.45); text-decoration:none; transition:color .2s; }
+.f-links a { font-size:13px; font-weight:500; color:rgba(255,255,255,.45); text-decoration:none; transition:color .2s; position:relative; display:inline-block; }
+.f-links a::after {
+  /* invisible touch-target extension — footer links have no padding, this widens the tap area without shifting layout */
+  content:'';
+  position:absolute;
+  inset:-12px -8px;
+}
 .f-links a:hover { color:var(--lavender-l); }
 .f-copy { font-size:12px; color:rgba(255,255,255,.3); }
 
@@ -954,6 +960,13 @@ footer {
   justify-content:center;
   flex-shrink:0;
   transition:all .2s;
+  position:relative;
+}
+.mm-close::after {
+  /* invisible touch-target extension to reach the 44px minimum without enlarging the visible circle */
+  content:'';
+  position:absolute;
+  inset:-2px;
 }
 .mm-close:hover { background:var(--lavender-d); color:#fff; }
 
