@@ -574,8 +574,8 @@ nav.scrolled { border-bottom-color:var(--line); padding:14px 56px; }
 }
 .mo-pill-icon { color:var(--lavender-d); }
 .who-icon { color:var(--lavender-d); }
-.who-icon .li { width:26px; height:26px; }
-.who-card:hover .who-icon .li { transform:scale(1.08); transition:transform .3s; }
+.who-icon .li { width:26px; height:26px; transition:transform .3s; }
+.who-card:hover .who-icon .li { transform:scale(1.08); }
 .tab-icon { color:#fff; }
 .tab-icon .li { width:30px; height:30px; stroke-width:1.5; }
 .c-info-icon { color:#fff; }
