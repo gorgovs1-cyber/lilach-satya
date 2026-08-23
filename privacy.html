@@ -3,14 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P2RDLBCBY3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-P2RDLBCBY3');
-</script>
+<!-- Cookie consent gate + Google tag (gtag.js) — GA only loads after consent -->
+<script src="cookie-consent.js" defer></script>
 <title>מדיניות פרטיות | לילך חזן – שיטת סאטיה</title>
 <meta name="description" content="מדיניות הפרטיות של אתר לילך חזן – שיטת סאטיה. כיצד אנו אוספים, משתמשים ומגנים על המידע שלך.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,9 +59,11 @@
 
     <h2>עוגיות (Cookies)</h2>
     <p>
-      האתר אינו עושה שימוש בעוגיות מעקב או פרסום. שירותי צד שלישי המוטמעים באתר
-      (כגון Google Fonts לטעינת גופנים) עשויים לקבל מידע טכני בסיסי, כדוגמת כתובת IP,
-      לצורך אספקת השירות בלבד, בהתאם למדיניות הפרטיות של אותם שירותים.
+      האתר משתמש בעוגיית אנליטיקס אחת (Google Analytics) כדי להבין כיצד משתמשים באתר ולשפר אותו.
+      עוגיה זו אינה הכרחית לתפעול הבסיסי של האתר, ולכן היא נטענת רק לאחר קבלת הסכמתך המפורשת
+      באמצעות באנר העוגיות. ניתן לשנות את ההחלטה בכל עת דרך הקישור &quot;הגדרות עוגיות&quot; בתחתית האתר.
+      שירותי צד שלישי נוספים המוטמעים באתר (כגון Google Fonts לטעינת גופנים) עשויים לקבל מידע טכני
+      בסיסי, כדוגמת כתובת IP, לצורך אספקת השירות בלבד, בהתאם למדיניות הפרטיות של אותם שירותים.
     </p>
 
     <h2>שירותי צד שלישי</h2>
@@ -123,9 +119,12 @@
 
     <h2>Cookies</h2>
     <p>
-      The website does not use tracking or advertising cookies. Third-party services embedded in the site
-      (such as Google Fonts for loading fonts) may receive basic technical information, such as an IP address,
-      solely for the purpose of delivering their service, in accordance with their own privacy policies.
+      The website uses a single analytics cookie (Google Analytics) to understand how the site is used and to
+      improve it. This cookie is not essential for the site's basic operation, so it is only loaded after you
+      give explicit consent via the cookie banner. You can change your decision at any time via the "Cookie
+      Settings" link at the bottom of the site. Other third-party services embedded in the site (such as Google
+      Fonts for loading fonts) may receive basic technical information, such as an IP address, solely for the
+      purpose of delivering their service, in accordance with their own privacy policies.
     </p>
 
     <h2>Third-Party Services</h2>
@@ -177,6 +176,7 @@
     <li><a href="terms.html">תקנון</a></li>
   </ul>
   <p class="f-copy">© 2026 לילך חזן. כל הזכויות שמורות.</p>
+  <button type="button" class="f-copy" style="background:none;border:none;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer;" onclick="window.openCookieSettings&&window.openCookieSettings()">הגדרות עוגיות</button>
 </footer>
 
 <script>
