@@ -130,6 +130,11 @@ nav.scrolled { border-bottom-color:var(--line); padding:14px 56px; }
   display:flex; align-items:center; gap:16px; flex-wrap:wrap;
   opacity:0; animation:fadeUp .85s .55s forwards;
 }
+.hero-trust {
+  margin-top:18px; font-size:13px; font-weight:600;
+  color:var(--muted); letter-spacing:.2px;
+  opacity:0; animation:fadeUp .85s .68s forwards;
+}
 .btn-primary {
   padding:16px 38px;
   background:var(--lavender-d); color:#fff;
