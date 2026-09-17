@@ -1303,3 +1303,6 @@ button:focus-visible,
     transform: none !important;
   }
 }
+
+/* SEO: inner-page title promoted from h2 to h1, keep identical look */
+h1.section-h2 { margin-top:0; }
