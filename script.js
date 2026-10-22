@@ -1,5 +1,5 @@
-window.addEventListener('scroll',()=>
-  document.getElementById('nav').classList.toggle('scrolled',scrollY>40));
+const nav = document.getElementById('nav');
+if(nav) window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
 
 /* ── Mobile menu ── */
 const hamburger = document.getElementById('hamburger');
@@ -14,7 +14,8 @@ function openMenu(){
   mm.classList.add('open');
   mmOverlay.classList.add('open');
   document.body.style.overflow='hidden';
-  mm.querySelector('.mm-close').focus();
+  // the panel is visibility:hidden until the class applies, so focus on the next tick
+  setTimeout(()=>mm.querySelector('.mm-close').focus(),50);
 }
 function closeMenu(){
   hamburger.classList.remove('open');
@@ -25,6 +26,7 @@ function closeMenu(){
   document.body.style.overflow='';
 }
 
+if(hamburger && mm){
 hamburger.addEventListener('click', ()=> mm.classList.contains('open') ? closeMenu() : openMenu());
 mmClose.addEventListener('click', closeMenu);
 mmOverlay.addEventListener('click', closeMenu);
@@ -43,6 +45,7 @@ mm.addEventListener('keydown', e=>{
   if(e.shiftKey){ if(document.activeElement===first){ e.preventDefault(); last.focus(); } }
   else { if(document.activeElement===last){ e.preventDefault(); first.focus(); } }
 });
+}
 
 const io=new IntersectionObserver(entries=>entries.forEach(e=>{
   if(e.isIntersecting)e.target.classList.add('in');
@@ -57,6 +60,7 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
   btn.setAttribute('id',`tab-${btn.dataset.tab}`);
   btn.setAttribute('aria-controls',`panel-${btn.dataset.tab}`);
   btn.setAttribute('aria-selected', btn.classList.contains('active') ? 'true' : 'false');
+  btn.setAttribute('tabindex', btn.classList.contains('active') ? '0' : '-1');
 });
 document.querySelectorAll('.tab-panel').forEach(panel=>{
   panel.setAttribute('role','tabpanel');
@@ -75,9 +79,11 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
     document.querySelectorAll('.tab-btn').forEach(b=>{
       b.classList.remove('active');
       b.setAttribute('aria-selected','false');
+      b.setAttribute('tabindex','-1');
     });
     btn.classList.add('active');
     btn.setAttribute('aria-selected','true');
+    btn.setAttribute('tabindex','0');
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -91,7 +97,7 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
       window.setTimeout(()=>{
         oldPanel.classList.remove('active','fade0');
         showNew();
-      },190);
+      },160);
     } else {
       if(oldPanel) oldPanel.classList.remove('active','fade0');
       showNew();
@@ -112,17 +118,9 @@ tabBtns.forEach((btn, idx) => {
   });
 });
 
-// FAQ ARIA init
+// FAQ accordion: each question is a real <button> with aria-expanded / aria-controls (set in the HTML)
 document.querySelectorAll('.faq-q').forEach(q=>{
-  q.setAttribute('role','button');
-  q.setAttribute('tabindex','0');
-  q.setAttribute('aria-expanded','false');
-  const icon = q.querySelector('.faq-icon');
-  if(icon) icon.setAttribute('aria-hidden','true');
-});
-
-document.querySelectorAll('.faq-q').forEach(q=>{
-  function toggleFaq(){
+  q.addEventListener('click', ()=>{
     const item = q.closest('.faq-item');
     const wasOpen = item.classList.contains('open');
     document.querySelectorAll('.faq-item').forEach(i=>{
@@ -133,17 +131,5 @@ document.querySelectorAll('.faq-q').forEach(q=>{
       item.classList.add('open');
       q.setAttribute('aria-expanded','true');
     }
-  }
-  q.addEventListener('click', toggleFaq);
-  q.addEventListener('keydown', e=>{
-    if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggleFaq(); }
   });
 });
-
-function onSend(e){
-  e.preventDefault();
-  const b=e.target.querySelector('.btn-form');
-  b.textContent='✓ ההודעה נשלחה!';
-  b.style.background='var(--sage)';
-  b.disabled=true;
-}

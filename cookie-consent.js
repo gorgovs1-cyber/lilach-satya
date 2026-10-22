@@ -1,4 +1,4 @@
-/* Cookie consent gate — blocks Google Analytics (GA4) until the visitor
+/* Cookie consent gate: blocks Google Analytics (GA4) until the visitor
    actively accepts, per Amendment 13 to the Israeli Privacy Protection Law.
    Reopen anytime via window.openCookieSettings(). */
 (function () {
@@ -34,15 +34,16 @@
       + 'box-shadow:0 -4px 24px rgba(42,36,56,.12);padding:20px 24px;'
       + 'display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;'
       + 'font-family:"Heebo",sans-serif;direction:rtl;}'
-      + '#cc-banner p{margin:0;color:var(--ink,#2A2438);font-size:14px;line-height:1.6;flex:1 1 320px;}'
-      + '#cc-banner a{color:var(--lavender-d,#7A65A3);}'
+      + '#cc-banner p{margin:0;color:var(--ink,#2A2438);font-size:15px;line-height:1.6;flex:1 1 320px;}'
+      + '#cc-banner a{color:var(--acc-text,#6A5793);display:inline-block;padding:11px 0;}'
       + '#cc-actions{display:flex;gap:10px;flex-shrink:0;}'
-      + '#cc-actions button{font-family:inherit;font-size:14px;font-weight:600;padding:10px 20px;'
-      + 'border-radius:999px;border:1px solid var(--lavender-d,#7A65A3);cursor:pointer;transition:opacity .2s;}'
-      + '#cc-accept{background:var(--lavender-d,#7A65A3);color:#fff;}'
-      + '#cc-decline{background:transparent;color:var(--lavender-d,#7A65A3);}'
-      + '#cc-banner button:hover{opacity:.85;}'
-      + '@media (max-width:640px){#cc-banner{flex-direction:column;align-items:stretch;text-align:center;}}';
+      /* accept and decline carry the same visual weight */
+      + '#cc-actions button{font-family:inherit;font-size:15px;font-weight:700;min-height:48px;padding:0 28px;'
+      + 'border-radius:var(--radius-btn,6px);border:1.5px solid var(--lavender-d,#7A65A3);cursor:pointer;'
+      + 'background:#fff;color:var(--acc-text,#6A5793);transition:background-color var(--t-fast,150ms),color var(--t-fast,150ms);}'
+      + '#cc-banner button:hover{background:var(--lavender-d,#7A65A3);color:#fff;}'
+      + '@media (max-width:640px){#cc-banner{flex-direction:column;align-items:stretch;text-align:center;gap:12px;padding:16px;}'
+      + '#cc-banner p{flex:0 1 auto;}#cc-actions button{flex:1 1 0;}}';
     var style = document.createElement('style');
     style.id = 'cc-styles';
     style.textContent = css;
@@ -52,6 +53,12 @@
   function hideBanner() {
     var el = document.getElementById('cc-banner');
     if (el) el.remove();
+    document.documentElement.style.removeProperty('--cc-h');
+  }
+  // keeps the floating WhatsApp button above the banner
+  function syncHeight() {
+    var el = document.getElementById('cc-banner');
+    if (el) document.documentElement.style.setProperty('--cc-h', el.offsetHeight + 'px');
   }
 
   function showBanner() {
@@ -61,6 +68,7 @@
     el.id = 'cc-banner';
     el.setAttribute('role', 'dialog');
     el.setAttribute('aria-label', 'הגדרות עוגיות');
+    el.setAttribute('aria-live', 'polite');
     el.innerHTML =
       '<p>אנחנו משתמשים בעוגיית אנליטיקס (Google Analytics) כדי להבין איך משתמשים באתר ולשפר אותו. '
       + 'אפשר לאשר או לדחות, ולשנות את ההחלטה בכל עת דרך &quot;הגדרות עוגיות&quot; בתחתית האתר. '
@@ -69,7 +77,12 @@
       + '<button id="cc-decline" type="button">דחייה</button>'
       + '<button id="cc-accept" type="button">אישור</button>'
       + '</div>';
-    document.body.appendChild(el);
+    // right after the skip link, so keyboard users reach it first and not after the whole page
+    var skip = document.querySelector('.skip-link');
+    if (skip && skip.parentNode === document.body) document.body.insertBefore(el, skip.nextSibling);
+    else document.body.insertBefore(el, document.body.firstChild);
+    syncHeight();
+    window.addEventListener('resize', syncHeight);
 
     document.getElementById('cc-accept').addEventListener('click', function () {
       setConsent('granted');
@@ -91,7 +104,7 @@
     if (consent === 'granted') {
       loadGA();
     } else if (consent === 'denied') {
-      // respect the visitor's earlier choice — do nothing
+      // respect the visitor's earlier choice: do nothing
     } else {
       showBanner();
     }

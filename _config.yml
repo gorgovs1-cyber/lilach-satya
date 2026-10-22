@@ -1,0 +1,7 @@
+# GitHub Pages (Jekyll): files that must never be published.
+# Folders starting with "_" (like _ארכיון) are already skipped by Jekyll.
+exclude:
+  - "*.md"
+  - "*.docx"
+  - "*.zip"
+  - fonts/OFL.txt
